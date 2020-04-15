@@ -14,14 +14,15 @@ const {
 // I chose the User-Agent value from http://www.browser-info.net/useragents
 // Not setting one causes Google search to not display results
 const defaultUserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:34.0) Gecko/20100101 Firefox/34.0';
+const defaultUrl = 'https://www.google.com/search';
 
 const defaultLimit = 10;
 const defaultStart = 0;
 
 const getDefaultRequestOptions = ({
-  limit, query, userAgent, start,
+  limit, query, userAgent, start, url,
 }) => ({
-  url: 'https://www.google.com/search',
+  url: url || defaultUrl,
   qs: {
     q: query,
     num: limit || defaultLimit,
